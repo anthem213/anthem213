@@ -20,4 +20,3 @@ df1.show()
 
 df.withColumn('rn', row_number().over(Window.partitionBy('name','age').orderBy(col('id'))))\
     .filter(col('rn')==1).orderBy('id').show()
-

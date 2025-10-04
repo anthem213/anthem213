@@ -11,3 +11,6 @@ df = spark.createDataFrame("")
 df.withColumn('rank',rank().over( Window.orderBy(col('salary').desc()))).filter(col('rank') == 1).drop(col('rank'))
 
 spark.stop()
+
+
+df.withColumn('rank', rank().over(Window.orderBy(col('salary').desc()))).filter(col('rank')==1).drop(col('rank'))
